@@ -99,6 +99,12 @@ const NavBar = () => {
     await connector.createSession();
   };
 
+  const connectAlgoSigner = async () => {
+    if (connector.connected) return;
+    if (connector.pending) return QRCodeModal.open(connector.uri, null);
+    await connector.createSession();
+  };
+
   const disconnect = () => {
     connector
       .killSession()
@@ -209,6 +215,11 @@ const NavBar = () => {
     dispatch(setIsWalletPopupOpen(false));
     if (client.type === WalletType.PeraWallet) {
       connect();
+    } else {
+        if (client.type === WalletType.AlgoSigner) {
+          connectAlgoSigner();
+        } 
+      }
     }
   };
 

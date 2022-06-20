@@ -53,3 +53,7 @@ export const INCENTIVE_FEE = 0.5 * 1e6;
 
 export const TXN_SIGNING_CANCELLED_MESSAGE = `You have cancelled transactions signing...`;
 export const TXN_SUBMISSION_FAILED_MESSAGE = `Failed to submit transactions, refresh page and try again. Make sure you have enough minimum balance on your account...`;
+
+export const TOKEN = { 'X-API-Key': 'fetqTyZ8r82MSX9YT2pLq53iRMZwVibQx3TtrZ2h' };
+export const ALGOD_SERVER = "https://testnet-algorand.api.purestake.io/ps2";
+export const PORT = '443';
